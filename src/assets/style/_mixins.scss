@@ -1,0 +1,26 @@
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-function;
+}
+
+@mixin section-title-indents {
+  padding-bottom: 40px;
+  padding-top: 24px;
+  @media #{$screen-md} {
+    padding-bottom: 64px;
+    padding-top: 64px;
+  }
+}
+
+@mixin transition-fade {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: 0.2s all ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}

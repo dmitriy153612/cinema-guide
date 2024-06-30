@@ -1,0 +1,49 @@
+$wood-smoke: #0a0b0b;
+$black: #000;
+$white: #fff;
+$blue-marguerite: #6a5dc1;
+$heliotrope: #dc5dfc;
+$cape-cod: #393b3c;
+$gunsmoke: #848585;
+$silver-sand: #b5b6b6;
+$melrose: #b4a9ff;
+$forest-green: #308e21;
+$thunderbird: #c82020;
+$bittersweet: #ff7575;
+$boulder: #777;
+$pirate-gold: #a59400;
+$wild-sand: #f6f6f6;
+
+$page-color: $wood-smoke;
+
+$overlay-color-light: rgba($black, 0.5);
+$overlay-color-dark: rgba($wood-smoke, 0.9);
+
+$screen-md: '(min-width: 992px)';
+$screen-lg: '(min-width: 1200px)';
+$screen-xxl: '(min-width: 1440px)';
+
+$header-z-index: 50;
+$search-list-z-index: $header-z-index;
+$search-overlay-z-index: 49;
+$screen-speaner-z-index: 53;
+$modal-z-index: 54;
+
+$containerInlinePadding: 20px;
+$maxContainerWidth: calc(1280px + ($containerInlinePadding * 2));
+$minContainerWidth: 375px;
+
+$header-height-mobile: 56px;
+$header-height-mobile-search: 88px;
+$header-height-medium: 82px;
+
+$transition-duration: 0.2s;
+$transition-function: ease;
+
+$border-radius-xs: 8px;
+$border-radius-s: 16px;
+$border-radius-m: 24px;
+$border-radius-l: 28px;
+$border-radius-xl: 50px;
+
+$card-box-shadow: 0 0 32px 4px rgba($white, 0.33);
