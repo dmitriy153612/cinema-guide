@@ -84,7 +84,6 @@ export const useAuthStore = defineStore('authStore', () => {
     try {
       const { data }: AxiosResponse<UserData> = await useAxios.get(USER_DATA_PATH)
       userData.value = data
-      console.log(data)
     } catch (err) {
       console.error(err)
     }

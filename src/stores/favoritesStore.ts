@@ -11,9 +11,7 @@ export const useFavoritesStore = defineStore('favoritesStore', () => {
   async function fetchGetFavoritesMovies() {
     try {
       const { data }: AxiosResponse<MovieData[]> = await useAxios.get(MOVIES_FAVORITES_PATH)
-      const res: AxiosResponse<MovieData[]> = await useAxios.get(MOVIES_FAVORITES_PATH)
       favoritesMovies.value = data
-      console.log(res)
     } catch (err) {
       console.error(err)
     }
@@ -21,8 +19,7 @@ export const useFavoritesStore = defineStore('favoritesStore', () => {
 
   async function fetchAddMovieToFavorite(movieId: string) {
     try {
-      const res = await useAxios.post(MOVIES_FAVORITES_PATH, { id: movieId })
-      console.log(res)
+      await useAxios.post(MOVIES_FAVORITES_PATH, { id: movieId })
     } catch (err) {
       console.error(err)
     }

@@ -44,7 +44,6 @@ export const useMoviesStore = defineStore('moviesStore', () => {
       } else {
         movies.value = data
       }
-      console.log(data)
     } catch (err) {
       console.error(err)
     } finally {
@@ -118,7 +117,6 @@ export const useMoviesStore = defineStore('moviesStore', () => {
     try {
       const { data }: AxiosResponse<MovieData> = await useAxios.get(MOVIE_RANDOM_PATH)
       movieRandom.value = data
-      console.log(data)
     } catch (err) {
       console.error(err)
     } finally {
