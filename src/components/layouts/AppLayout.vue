@@ -21,9 +21,6 @@
   min-height: 100vh;
   background-color: $page-color;
 
-  &__container {
-  }
-
   &__container--header {
     position: fixed;
     top: 0;
@@ -41,9 +38,6 @@
     @media #{$screen-md} {
       padding-top: $header-height-medium;
     }
-  }
-
-  &__container--footer {
   }
 }
 </style>

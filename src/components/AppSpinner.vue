@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 
 const props = withDefaults(
   defineProps<{
@@ -22,15 +22,6 @@ const typeClass = ref({
   'spinner-overlay--button-spinner': props.type === 'button',
   'spinner-overlay--screen-spinner': props.type === 'screen'
 })
-
-if (props.type === 'screen') {
-  onMounted(() => {
-    document.body.style.overflow = 'hidden'
-  })
-  onUnmounted(() => {
-    document.body.style.overflow = 'auto'
-  })
-}
 </script>
 
 <style lang="scss" scoped>

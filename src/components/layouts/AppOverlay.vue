@@ -1,5 +1,5 @@
 <template>
-  <div class="overlay" :class="overlayClass" @mousedown.self="emit('close')">
+  <div class="overlay" :class="overlayClass" @mousedown.self="emitClose">
     <slot />
   </div>
 </template>
@@ -43,8 +43,12 @@ const overlayClass = computed(() => {
   }
 })
 
+function emitClose() {
+  emit('close')
+}
+
 function emitCloseModalByEsc(event: KeyboardEvent) {
-  event.key === 'Escape' && emit('close')
+  event.key === 'Escape' && emitClose()
 }
 
 function focusBtnOpenModal() {
@@ -61,10 +65,8 @@ watch(
   () => props.disabled,
   (newValue) => {
     if (newValue) {
-      document.body.style.overflowY = 'auto'
       document.removeEventListener('keydown', emitCloseModalByEsc)
     } else {
-      document.body.style.overflowY = 'hidden'
       document.addEventListener('keydown', emitCloseModalByEsc)
     }
   },
@@ -89,21 +91,26 @@ onUnmounted(() => {
     align-items: center;
     overflow: auto;
   }
+
   &--video {
     justify-content: stretch;
   }
+
   &--mobile-search {
     display: block;
     padding-top: 16px;
     padding-inline: $containerInlinePadding;
     padding-bottom: $containerInlinePadding;
   }
+
   &--dark {
     background-color: $overlay-color-dark;
   }
+
   &--light {
     background-color: $overlay-color-light;
   }
+
   &--header {
     z-index: $search-overlay-z-index;
   }
